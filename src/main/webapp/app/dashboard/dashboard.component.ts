@@ -1,31 +1,25 @@
 import Component from 'vue-class-component';
 import {Inject, Vue} from 'vue-property-decorator';
-import BankAccountService from '@/entities/bank-account/bank-account.service';
+import DashboardService from '@/dashboard/dashboard.service';
 import {IBankAccount} from '@/shared/model/bank-account.model';
 import {IOperation} from '@/shared/model/operation.model';
-import OperationService from '@/entities/operation/operation.service';
 
 @Component
 export default class Dashboard extends Vue {
-  @Inject('bankAccountService') private bankAccountService: () => BankAccountService;
-  @Inject('operationService') private operationService: () => OperationService;
+  @Inject('dashboardService') private dashboardService: () => DashboardService;
   public bankAccounts: IBankAccount[] = [];
   public operations: IOperation[] = [];
 
   public mounted(): void {
-    this.retrieveEntities();
+    this.retrieveDashboard();
   }
 
-  public retrieveEntities(): void {
-    this.bankAccountService()
+  public retrieveDashboard(): void {
+    this.dashboardService()
       .retrieve()
       .then(res => {
-        this.bankAccounts = res.data;
-      });
-    this.operationService()
-      .retrieve()
-      .then(res => {
-        this.operations = res.data;
+        this.bankAccounts = res.data.bankAccounts;
+        this.operations = res.data.operations;
       });
   }
 }
