@@ -1,0 +1,24 @@
+{
+  "workshopApp": {
+    "bankAccount": {
+      "home": {
+        "title": "Bank Accounts",
+        "createLabel": "Crear nuevo Bank Account",
+        "createOrEditLabel": "Crear o editar Bank Account"
+      },
+      "created": "Un nuevo Bank Account ha sido creado con el identificador {{ param }}",
+      "updated": "Un Bank Account ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Bank Account ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Bank Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Bank Account"
+      },
+      "name": "Name",
+      "balance": "Balance",
+      "operation": "Operation",
+      "user": "User"
+    }
+  }
+}
