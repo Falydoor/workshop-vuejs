@@ -7,6 +7,7 @@ Component.registerHooks([
 ]);
 import Router from 'vue-router';
 const Home = () => import('../core/home/home.vue');
+const Dashboard = () => import('../dashboard/dashboard.vue');
 const Error = () => import('../core/error/error.vue');
 const Register = () => import('../account/register/register.vue');
 const Activate = () => import('../account/activate/activate.vue');
@@ -53,6 +54,11 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Dashboard
     },
     {
       path: '/forbidden',
