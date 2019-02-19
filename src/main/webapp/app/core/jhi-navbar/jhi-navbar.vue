@@ -17,7 +17,7 @@
                         <span v-text="$t('global.menu.home')">Home</span>
                     </span>
                 </b-nav-item>
-                <b-nav-item to="/dashboard" exact>
+                <b-nav-item to="/dashboard" v-if="authenticated" exact>
                     <span>
                         <font-awesome-icon icon="chart-pie" />
                         <span v-text="$t('global.menu.dashboard')">Dashboard</span>
