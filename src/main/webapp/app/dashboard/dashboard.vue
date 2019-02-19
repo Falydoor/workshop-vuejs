@@ -20,7 +20,7 @@
                 </thead>
                 <tbody>
                 <tr v-for="bankAccount in bankAccounts" :key="bankAccount.id">
-                    <td>{{bankAccount.name}}</td>
+                    <td><router-link :to="{name: 'BankAccountView', params: {bankAccountId: bankAccount.id}}">{{bankAccount.name}}</router-link></td>
                     <td>{{bankAccount.balance}}</td>
                 </tr>
                 </tbody>
