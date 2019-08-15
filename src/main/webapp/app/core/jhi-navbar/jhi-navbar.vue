@@ -17,6 +17,12 @@
                         <span v-text="$t('global.menu.home')">Home</span>
                     </span>
                 </b-nav-item>
+                <b-nav-item to="/dashboard" exact>
+                    <span>
+                        <font-awesome-icon icon="chart-pie" />
+                        <span v-text="$t('global.menu.dashboard')">Dashboard</span>
+                    </span>
+                </b-nav-item>
                 <b-nav-item-dropdown
                     id="entity-menu"
                     v-if="authenticated"
