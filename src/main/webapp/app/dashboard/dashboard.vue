@@ -1,5 +1,12 @@
 <template>
     <div>
+        <b-alert :show="dismissCountDown"
+                 dismissible
+                 :variant="alertType"
+                 @dismissed="dismissCountDown=0"
+                 @dismiss-count-down="countDownChanged">
+            {{alertMessage}}
+        </b-alert>
         <h1>My Dashboard:</h1>
         <br>
         <h2>Accounts:</h2>
