@@ -20,7 +20,7 @@
                 </thead>
                 <tbody>
                 <tr v-for="bankAccount in bankAccounts" :key="bankAccount.id">
-                    <td>{{bankAccount.name}}</td>
+                    <td><router-link :to="{name: 'BankAccountView', params: {bankAccountId: bankAccount.id}}">{{bankAccount.name}}</router-link></td>
                     <td>{{bankAccount.balance}}</td>
                 </tr>
                 </tbody>
@@ -44,7 +44,7 @@
                     <td>{{operation.description}}</td>
                     <td>{{operation.amount}}</td>
                     <td>
-                        <span v-if="operation.bankAccount">{{operation.bankAccount.name}}</span>
+                        <span v-if="operation.bankAccount"><router-link :to="{name: 'BankAccountView', params: {bankAccountId: operation.bankAccount.id}}">{{operation.bankAccount.name}}</router-link></span>
                     </td>
                 </tr>
                 </tbody>
