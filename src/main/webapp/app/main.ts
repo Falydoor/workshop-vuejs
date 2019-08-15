@@ -26,6 +26,7 @@ import ConfigurationService from '@/admin/configuration/configuration.service';
 import BankAccountService from '@/entities/bank-account/bank-account.service';
 import LabelService from '@/entities/label/label.service';
 import OperationService from '@/entities/operation/operation.service';
+import DashboardService from '@/dashboard/dashboard.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 Vue.config.productionTip = false;
@@ -85,7 +86,8 @@ new Vue({
     labelService: () => new LabelService(),
     operationService: () => new OperationService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
-    accountService: () => accountService
+    accountService: () => accountService,
+    dashboardService: () => new DashboardService()
   },
   i18n,
   store
