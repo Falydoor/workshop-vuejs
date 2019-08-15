@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="dashboard">
         <b-alert :show="dismissCountDown"
                  dismissible
                  :variant="alertType"
@@ -53,3 +53,8 @@
     </div>
 </template>
 <script lang="ts" src="./dashboard.component.ts"></script>
+<style scoped>
+    div.dashboard {
+        color: red;
+    }
+</style>
